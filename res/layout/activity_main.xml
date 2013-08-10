@@ -13,5 +13,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Slide Page" />
+    
+    <Button
+        android:id="@+id/zoom_out_page"
+        android:layout_below="@id/slide_page"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Zoom Out Page" />
+    
+     <Button
+        android:id="@+id/depth_page"
+        android:layout_below="@id/zoom_out_page"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Depth Page" />
 
 </RelativeLayout>

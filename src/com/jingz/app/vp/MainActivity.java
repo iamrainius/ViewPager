@@ -11,6 +11,8 @@ import android.widget.Button;
 public class MainActivity extends Activity implements OnClickListener {
 	
 	private Button mSlidePage;
+	private Button mZoomOutPage;
+	private Button mDepthPage;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +21,12 @@ public class MainActivity extends Activity implements OnClickListener {
 		
 		mSlidePage = (Button) findViewById(R.id.slide_page);
 		mSlidePage.setOnClickListener(this);
+		
+		mZoomOutPage = (Button) findViewById(R.id.zoom_out_page);
+		mZoomOutPage.setOnClickListener(this);
+		
+		mDepthPage = (Button) findViewById(R.id.depth_page);
+		mDepthPage.setOnClickListener(this);
 	}
 
 	@Override
@@ -34,10 +42,27 @@ public class MainActivity extends Activity implements OnClickListener {
 		case R.id.slide_page:
 			openSlidePage();
 			break;
-
+		case R.id.zoom_out_page:
+			openZoomOutPage();
+			break;
+		case R.id.depth_page:
+			openDepthPage();
+			break;
 		default:
 			break;
 		}
+	}
+
+	private void openDepthPage() {
+		Intent intent = new Intent(this, SlidePageActivity.class);
+		intent.putExtra("animation", SlidePageActivity.EXTRA_DEPTH);
+		startActivity(intent);
+	}
+
+	private void openZoomOutPage() {
+		Intent intent = new Intent(this, SlidePageActivity.class);
+		intent.putExtra("animation", SlidePageActivity.EXTRA_ZOOM_OUT);
+		startActivity(intent);
 	}
 
 	private void openSlidePage() {
